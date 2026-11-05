@@ -1,0 +1,7 @@
+/openvpn3-control
+*.ovpn
+*.key
+*.pem
+*.crt
+.env
+.env.*
