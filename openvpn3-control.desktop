@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=OpenVPN 3 Control
+Comment=Start the local OpenVPN 3 Go control panel
+Exec=sh -c 'cd "$HOME/Downloads/openvpn3-go-control" && exec ./openvpn3-control'
+Path=
+Terminal=true
+Icon=network-vpn
+Categories=Network;Utility;
+StartupNotify=false
