@@ -72,3 +72,17 @@ openvpn3 session-start --config /home/armine/Downloads/armine.stoykova.ovpn
 ```
 
 If a login browser does not open automatically, follow your OpenVPN 3 CLI's `session-auth` instructions. Do not create a second VPN session while the first is awaiting authentication.
+
+## Ubuntu desktop launcher
+
+To add **OpenVPN 3 Control** to the Ubuntu application menu, clone or download this repository, then run from its directory:
+
+```bash
+bash install-desktop.sh
+```
+
+The installer builds `openvpn3-control` with Go if the binary is missing, creates a launcher in `~/.local/bin/`, and installs a `.desktop` entry in `~/.local/share/applications/`. It uses the actual directory of the checkout rather than assuming `~/Downloads`.
+
+The repository's `openvpn3-control.desktop` is a reference/template; **run the installer** to generate a working entry for your machine. After installation, find **OpenVPN 3 Control** in Ubuntu's applications menu. A terminal stays open while the server runs. Open `http://127.0.0.1:8765` in your browser. Close the terminal to stop the server.
+
+Requirements: Ubuntu, OpenVPN 3 Linux CLI, a valid VPN configuration file, and Go 1.22+ if building from source. The default configuration path in `main.go` is specific to the original developer; set `OPENVPN_CONFIG` for your own configuration when launching manually or adapt the generated launcher. **Never commit private `.ovpn` credentials or tokens.** If you move the checkout, rerun the installer.
